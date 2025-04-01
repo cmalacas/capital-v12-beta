@@ -156,4 +156,17 @@
     body {
         @apply bg-background text-foreground;
     }
+
+    .navbar, 
+    .navbar > .container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        padding: .5rem 1rem;
+        position: relative
+    }
 }

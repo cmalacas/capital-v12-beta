@@ -35,15 +35,37 @@
   <link href="https://uploads-ssl.webflow.com/6061bca8343bd7394f600454/60910a7f3c6bd04b9d59c7d0_Icon-256.png"
     rel="apple-touch-icon" />
   <link href="https://www.yourvirtualofficelondon.co.uk/" rel="canonical" />
+  <!-- Google Tag Manager  -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-57BHDMT4');
+  </script>
+  <!-- End Google Tag Manager -->
+
+
 
   <script type="text/javascript">
     ! function (e, t) {
       (e = t.createElement("script")).src = "https://cdn.convertbox.com/convertbox/js/embed.js", e.id = "app-convertbox-script", e.async = true, e.dataset.uuid = "7f23ecd1-5b6c-4de4-9bff-e51982d5b238", document.getElementsByTagName("head")[0].appendChild(e)
     }(window, document);
   </script>
+  <!-- TrustBox script -->
+  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+  <!-- End TrustBox script -->
+  <!--This Loads the Light Theme Style-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;600&display=swap" rel="stylesheet">
 
-
-  <link rel="stylesheet" href="{{ asset('base/base.css') }}" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+  />
 
   <style>
     body,
@@ -58,7 +80,7 @@
       max-width: 1440px
     }
 
-    .main .container .checkout-content {
+    /* .main .container .checkout-content {
       margin-top: 0;
       background-color: #f4f8fa;
       padding: 50px 50px 0;
@@ -194,7 +216,7 @@
     .main .container .checkout-content .box img {
       display: block;
       margin-bottom: 20px;
-    }
+    } */
 
 
     .phone-text {
@@ -591,7 +613,7 @@
 
     .login-container {
       max-width: 488px;
-      margin: 100px auto 0;
+      margin: 0 auto 0;
       padding: 40px 60px;
       border-radius: 20px;
       background: #fff;
@@ -711,6 +733,10 @@
       color: #fff;
     }
 
+    .mega-menu.w--open {
+      top: 70px;
+    }
+
     @media screen and (max-width: 425px) {
       .logos {
         display: block;
@@ -732,6 +758,10 @@
     }
   </style>
   <meta name="facebook-domain-verification" content="iadmqhbwlz0jexc6jw0sdttj8ohe07" />
+
+  @viteReactRefresh
+  @vite(['resources/js/login.tsx', 'resources/css/app.css'])
+
 </head>
 
 <body class="main">
@@ -759,6 +789,7 @@
           <a href="https://www.yourvirtualofficelondon.co.uk/" aria-current="page"
             class="navlink home w-nav-link w--current">Home</a>
           <a href="https://www.yourvirtualofficelondon.co.uk/pricing" class="navlink w-nav-link">Pricing</a>
+
           <div data-hover="true" data-delay="0" class="w-dropdown">
             <div class="navlink w-dropdown-toggle">
               <div class="icon w-icon-dropdown-toggle"></div>
@@ -769,22 +800,25 @@
                 <div class="nopad w-col w-col-3 w-col-medium-6 w-col-small-small-stack">
                   <h4 class="mega-menu-header">Address Services</h4>
                   <a href="https://www.yourvirtualofficelondon.co.uk/services/registered-office-address"
-                    class="dropdown-link w-dropdown-link">Registered Office</a>
+                    class="dropdown-link w-dropdown-link">Registered Office Address</a>
                   <a href="https://www.yourvirtualofficelondon.co.uk/services/mail-forwarding-service"
-                    class="dropdown-link w-dropdown-link">London Office Address</a>
+                    class="dropdown-link w-dropdown-link">Virtual Business Address</a>
                   <a href="https://www.yourvirtualofficelondon.co.uk/services/directors-address"
-                    class="dropdown-link w-dropdown-link">Officers Service Address London</a>
+                    class="dropdown-link w-dropdown-link">Directors Privacy Address</a>
+                  <a href="https://www.yourvirtualofficelondon.co.uk/services/virtual-office-service"
+                    class="dropdown-link w-dropdown-link">Complete Virtual Office</a>
                 </div>
+
                 <div class="nopad w-col w-col-3 w-col-medium-6 w-col-small-small-stack">
                   <h4 class="mega-menu-header">Call Answering</h4>
                   <a href="https://www.yourvirtualofficelondon.co.uk/services/voicemail-service"
                     class="dropdown-link w-dropdown-link">Voicemail Only Service</a>
                   <a href="https://www.yourvirtualofficelondon.co.uk/services/call-answering-service"
                     class="dropdown-link w-dropdown-link">Call Answering Service</a>
-                  <h4 class="mega-menu-header">Virtual Office</h4>
                   <a href="https://www.yourvirtualofficelondon.co.uk/services/virtual-office-service"
                     class="dropdown-link w-dropdown-link">Complete Virtual Office</a>
                 </div>
+
                 <div class="nopad w-col w-col-3 w-col-medium-6 w-col-small-small-stack">
                   <h4 class="mega-menu-header">Company Formation</h4>
                   <a href="https://www.yourvirtualofficelondon.co.uk/services/online-limited-company-formation"
@@ -812,21 +846,25 @@
             <div class="navlink w-dropdown-toggle">
               <a href="https://www.yourvirtualofficelondon.co.uk/faqs" class="navlink-drop w-inline-block">
                 <div class="icon w-icon-dropdown-toggle"></div>
-                <div>FAQs</div>
+                <div>Info</div>
               </a>
             </div>
             <nav class="dropdown-list w-dropdown-list">
-              <a href="https://www.yourvirtualofficelondon.co.uk/about-us"
-                class="dropdown-link single w-dropdown-link">About Us</a>
-              <a href="https://www.yourvirtualofficelondon.co.uk/contact-capital-office"
-                class="dropdown-link single w-dropdown-link">Contact Us</a>
+              <a href="https://www.yourvirtualofficelondon.co.uk/faqs"
+                class="dropdown-link single w-dropdown-link">FAQs</a>
+              <a href="https://www.yourvirtualofficelondon.co.uk/resource-centre"
+                class="dropdown-link single w-dropdown-link">Resource Centre</a>
+              <a href="https://www.yourvirtualofficelondon.co.uk/case-studies"
+                class="dropdown-link single w-dropdown-link">Case Studies</a>
             </nav>
           </div>
           <a href="https://www.yourvirtualofficelondon.co.uk/blog" class="navlink w-nav-link">Blog</a>
-          <a href="https://www.yourvirtualofficelondon.co.uk/resource-centre" class="navlink w-nav-link">Resource
-            Centre</a>
+          <a href="https://www.yourvirtualofficelondon.co.uk/about-us" class="navlink w-nav-link">About</a>
+          <a href="https://www.yourvirtualofficelondon.co.uk/contact-capital-office" class="navlink w-nav-link">Contact
+            Us</a>
           <a href="https://admin.capital-office.co.uk/login" class="navlink w-nav-link">Login</a>
         </nav>
+
         <div class="menu-button w-nav-button">
           <div class="w-icon-nav-menu"></div>
         </div>
@@ -843,7 +881,7 @@
 
   @include('auth.login-footer')
 
-  <script src="{{ asset('js/login.js') }}"></script>
+  
 
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6061bca8343bd7394f600454"
     type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -901,6 +939,8 @@
       allowHTML: true,
     })
   </script>
+
+
 
 
 </body>
