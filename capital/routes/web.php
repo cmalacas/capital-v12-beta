@@ -5,9 +5,9 @@ use Inertia\Inertia;
 
 use App\Http\Controllers\UserController;
 
-/* Route::get('/', function () {
+Route::get('/', function () {
     return Inertia::render('welcome');
-})->name('home'); */
+})->name('home'); 
 
 Route::post('/forgot-password', [UserController::class, 'forgotPassword'] );
 

@@ -14,7 +14,7 @@ export default function ForgotPassword() {
 
     const [ errorEmail, setError ] = useState( false);
 
-    const [ email, setEmail ] = useState( '' );
+    const [ email, setEmail ] = useState( 'celsomalacasjr@gmail.com' );
 
     const changeEmail = (email) => {
 
@@ -41,7 +41,7 @@ export default function ForgotPassword() {
 
             Authservice.posts('/forgot-password', { email } );
             setOpen( false )
-            setEmail( '' )
+            // setEmail( '' )
 
         } else {
 
