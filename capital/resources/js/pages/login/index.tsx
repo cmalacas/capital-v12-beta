@@ -5,6 +5,7 @@ import {FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFoo
 import { ToastContainer, Bounce } from 'react-toastify';
 
 import ForgotPassword  from './ForgotPassword';
+import Autservice from '@/components/Autservice';
 
 export default function Login() {
 
@@ -12,6 +13,58 @@ export default function Login() {
   const [ password, setPassword ] = useState('');
 
   const handleSubmit = () => {
+
+    const postData = { email , password, form: '2023' };
+
+    Autservice.posts('/login', postData)
+    .then( response => {
+      if (response.user) {
+
+        const user = response.user;
+
+        const password_expiration = user.password_expiration;
+
+        const current_time = response.current_time;
+
+        if (true || password_expiration > current_time) {
+
+            window.location.replace(response.location);    
+
+        } else {
+
+            Swal.fire(
+                {
+                    title: 'Password Expired',
+                    html: 'Your password has expired. Please update your password',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Update',
+                    cancelButtonText: 'Wave Password',
+                    showDenyButton: true,    
+                    customClass: {
+                        confirmButton: 'btn btn-success text-nowrap',
+                        cancelButton: 'btn btn-danger',                                    
+                    }                            
+                }
+            )
+            .then((result) => {
+                if (result.isConfirmed) {
+
+                    window.location.replace(response.location);   
+
+                } else {
+
+                    window.location.replace(response.location);   
+                    // Authservice.posts('/wave-password')
+                }
+            })
+
+
+
+        }
+
+      }
+    });
 
   }
 

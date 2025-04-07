@@ -40,6 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'client' => [
+                'redirecTo' => 'clients.home',
+                'driver' => 'session',
+                'provider' => 'clients'
+            ]
     ],
 
     /*
